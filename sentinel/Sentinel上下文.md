@@ -91,3 +91,14 @@
 
    
 
+>- EntranceNode作为上下文的入口，每个context name对应全局一个EntranceNode实例
+>- Context是线程相关的，就算Context name一样，但是不同线程的context是不同的（虽然他们关联的entranceNode是一样）
+>- DefaultNode对于同一个resource的不同Context name有不同的统计实例，但非线程相关
+>- ClusterNode是一个resource的全局统计
+>- 相同的resource全局共享同一个ProcessorSlotChain 实例
+
+## 参考
+
+- [Sentinel 核心类解析](https://github.com/alibaba/Sentinel/wiki/Sentinel-%E6%A0%B8%E5%BF%83%E7%B1%BB%E8%A7%A3%E6%9E%90)
+- [Sentinel学习笔记（3）-- 上下文统计Node建立分析](https://www.jianshu.com/p/cfdf525248c1)
+
